@@ -5,7 +5,7 @@ import serve from 'koa-static';
 import Router from 'koa-router';
 import bodyParser from 'koa-bodyparser';
 import logger from 'koa-logger';
-import jwtMiddleware from './lib/jwtMiddleware';
+// import jwtMiddleware from './lib/jwtMiddleware';
 import api from './api';
 
 const { PORT } = process.env;

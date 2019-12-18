@@ -1,4 +1,4 @@
-import * as Token from '../../lib/handleToken';
+import Token from '../../lib/handleToken';
 
 export const issue = ctx => {
   const token = Token.create({
