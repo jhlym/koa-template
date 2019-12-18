@@ -10,12 +10,12 @@ import { Query } from '../../utils';
  *
  */
 export const registerUser = async ctx => {
-  const { uid, pwd } = ctx.request.body;
-  Query(`INSERT INTO users (uid, pwd) VALUES ('${uid}', '${pwd}')`)
-    .then(res => {})
-    .catch(e => {
-      console.dir(e);
-    });
+  const { uid, pwd, name, email } = ctx.request.body;
+  // TODO: 비밀번호 암호화 필요
+  Query(
+    `INSERT INTO users (uid, pwd, name, email) VALUES ('${uid}', '${pwd}', '${name}', '${email}')`,
+  );
+  ctx.redirect('/views/login.html');
 };
 
 /**
@@ -23,6 +23,11 @@ export const registerUser = async ctx => {
  * GET api/vi/user/:id
  * @param {*} ctx
  */
+export const SearchUser = async ctx => {
+  const { uid } = ctx.params;
+  const res = await Query(`select uid, pwd from users where uid = '${uid}'`);
+  ctx.body = res.rows;
+};
 
 /**
  * 사용자 업데이트
