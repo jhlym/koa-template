@@ -1,5 +1,6 @@
 import { Query } from '../../utils';
 import Token from '../../lib/handleToken';
+
 /**
  * POST /api/auth/login
  * {

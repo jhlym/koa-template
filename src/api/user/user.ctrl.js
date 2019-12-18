@@ -9,7 +9,7 @@ import { Query } from '../../utils';
  * }
  *
  */
-export const registerUser = async ctx => {
+export const RegisterUser = async ctx => {
   const { uid, pwd, name, email } = ctx.request.body;
   // TODO: 비밀번호 암호화 필요
   Query(
